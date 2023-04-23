@@ -1,103 +1,48 @@
 <!DOCTYPE html>
-
 <html>
-
 <head>
-
-	<title>Список книг</title>	<style>
-
+	<title>Список книг</title>	
+	<style>
 		.bookList li {
-
+                        magrin-bottom:10px;
 			cursor: pointer;
-
 		}
-
 		.bookList li.active {
-
 			background-color: orange;
-
 		}
-
 	</style>
-
 </head>
-
 <body>
-
-	<ul class="bookList">
-
-		<li>JavaScript: The Good Parts («JavaScript. Сильные стороны»)</li>
-
-		<li>You Don’t Know JS («Вы не знаете JS»)</li>
-
-		<li>Eloquent JavaScript: A Modern Introduction to Programming («Выразительный Javascript»)</li>
-
-		<li>Effective JavaScript: 68 Specific Ways to Harness the Power of JavaScript («Сила JavaScript. 68 способов эффективного использования JS»)</li>
-
-		<li>JavaScript: The Definitive Guide («JavaScript. Подробное руководство»)</li>
-
-		<li>Secrets of the JavaScript Ninja («Секреты JavaScript ниндзя»)</li>
-
-		<li>JavaScript Patterns: Build Better Applications with Coding and Design Patterns («JavaScript. Шаблоны»)</li>
-
-		<li>The Principles of Object-Oriented JavaScript («Принципы ООП в Javascript»)</li>
-
-		<li>Programming JavaScript Applications: Robust Web Architecture with Node, HTML5,and Moderns JS Libraries («Программирование приложений на JavaScript. Устойчивая веб-архитектура с помощью Node, HTML5 и современных JS-библиотек»)</li>
-
-	</ul>
-
+	<ol class="bookList">
+		<li>JavaScript for Kids: A Playful Introduction to Programming" by Nick Morgan</li>
+		<li>"Eloquent JavaScript: A Modern Introduction to Programming" by Marijn Haverbeke</li>
+		<li>"JavaScript: The Good Parts" by Douglas Crockford</li>
+		<li>"Programming JavaScript Applications: Robust Web Architecture with Node, HTML5, and Moderns JS Libraries" by Eric Elliott</li>
+		<li>"Effective JavaScript: 68 Specific Ways to Harness the Power of JavaScript" by David Herman</li>
+		<li>"JavaScript: The Definitive Guide" by David Flanagan </li>
+		<li>"You Don't Know JS" by Kyle Simpson</li>
+	</ol>
 	<script>
-
-		// получаем все элементы списка книг
-
 		var books = document.querySelectorAll('.bookList li');
-
-		var currentBook = null; // хранит текущую выбранную книгу
-
-		// обрабатываем щелчки на каждом элементе
-
+		var currentBook = null; 
 		books.forEach(function(book) {
-
-			book.addEventListener('click', function() {
-
-				// если это первый выбранный элемент, то просто добавляем ему класс active
-
+			book.addEventListener('click', function() {			
 				if (currentBook === null) {
-
 					this.classList.add('active');
-
 					currentBook = this;
 
 				}
-
-				// если текущий выбранный элемент уже имеет класс active, то удаляем его
-
 				else if (this === currentBook && this.classList.contains('active')) {
-
 					this.classList.remove('active');
-
 					currentBook = null;
-
 				}
-
-				// если текущий выбранный элемент не равен предыдущему выбранному элементу, то удаляем класс active с предыдущего элемента и добавляем его на текущий
-
 				else {
-
 					currentBook.classList.remove('active');
-
 					this.classList.add('active');
-
 					currentBook = this;
-
-				}
-
+				};
 			});
-
 		});
-
 	</script>
-
 </body>
-
 </html
