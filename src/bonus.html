@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <title>Bonus</title>
+    <style>
+        h2{
+            margin: 60px 0 60px 0;
+        }
+        #progressbar {
+            display: block;
+            margin: auto;
+            margin-top: 60px;
+            width: 400px;
+            height: 30px;
+            overflow: hidden;
+            margin-bottom: 10px;
+            border: 1px solid #ff6b08;
+            border-radius: 15px;
+            transition: .3s;
+            outline: none;
+        }
+
+        .bar {
+            width: 0%;
+            height: 100%;
+            background-color: #1bd01b;
+        }
+        .btnProgress{
+            display: flex;
+        }
+        #progressLabel{
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <a class="button" href="../index.html">Домой</a>
+        <h1 class="taskTitle">Задание Бонус</h1>
+    </div>
+
+    <div class="bonus">
+        <div id="progressbar">
+            <div class="bar"></div>
+        </div>
+        <h2 id="progressLabel">Прогресс: 0%</h2>
+        <div class="btnProgress">
+            <button class="button" id="increaseButton">Увеличить прогресс</button>
+            <button class="button" id="decreaseButton">Уменьшить прогресс</button>
+            <button class="button" id="resetButton">Обнулить прогресс</button>
+        </div>
+    </div>
+    <script>
+        const progressBar = document.querySelector("#progressbar .bar");
+        const progressLabel = document.querySelector("#progressLabel");
+        const increaseButton = document.querySelector("#increaseButton");
+        const decreaseButton = document.querySelector("#decreaseButton");
+        const resetButton = document.querySelector("#resetButton");
+        
+        let progress = 0;
+
+        function updateProgress() {
+            progressBar.style.width = progress + "%";
+            progressLabel.innerHTML = `Прогресс: ${progress}%`;
+        }
+
+        increaseButton.addEventListener("click", () => {
+            progress += 5;
+            if (progress > 100) {
+                progress = 100;
+            }
+            updateProgress();
+        });
+
+        decreaseButton.addEventListener("click", () => {
+            progress -= 5;
+            if (progress < 0) {
+                progress = 0;
+            }
+            updateProgress();
+        });
+
+        resetButton.addEventListener("click", () => {
+            progress = 0;
+            updateProgress();
+        });
+    </script>
+</body>
+
+</html>

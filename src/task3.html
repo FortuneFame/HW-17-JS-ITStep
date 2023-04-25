@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <title>Task #3</title>
+    <style>
+        .content {
+            width: 80vw;
+            margin: auto;
+        }
+
+        .task-btn {
+            margin-top: 60px;
+            margin-bottom: 60px;
+        }
+
+        #text {
+            padding: 60px;
+            background-color: antiquewhite;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <a class="button" href="../index.html">Домой</a>
+        <h1 class="taskTitle">Задание №3</h1>
+    </div>
+    <div class="task-three">
+        <button class="button task-btn" id="hide-btn">Показать текст</button>
+        <div class="content">
+            <p id="text" style="display: none;">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                sed do eiusmod tempor incididunt ut labore et doloremagna
+                aliqua. Molestie nunc non blandit massa enim nec dui nunc mattis.
+                Tellus pellentesque eu tincidunt tortoraliquam.
+                Vulputate enim nulla aliquet porttitor lacus luctus.
+                Nunc mattis enim ut tellus elementum sagittis vitae et.Ametnisl
+                purus in mollis nunc. Facilisis leo vel fringilla est ullamcorper.
+                Egestas erat imperdiet sed euismod nisi portalorem.
+                Porta lorem mollis aliquam ut. Sapien et ligula ullamcorper
+                malesuada proin libero nunc consequat interdum.Temporid eu
+                nisl nunc mi ipsum.
+            </p>
+        </div>
+    </div>
+    <script>
+        const hideBtn = document.getElementById('hide-btn');
+        const text = document.getElementById('text');
+        hideBtn.addEventListener('click', () => {
+            if (text.style.display === 'none') {
+                text.style.display = 'block';
+                hideBtn.innerHTML = 'Скрыть текст';
+            } else {
+                text.style.display = 'none';
+                hideBtn.innerHTML = 'Показать текст';
+            }
+        });
+    </script>
+</body>
+
+</html>

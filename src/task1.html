@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <title>Task #1</title>
+    <style>
+        .number {
+            font-weight: 700;
+            font-size: 56px;
+        }
+
+        .random-div {
+            height: 200px;
+        }
+
+        .title {
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .number {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <a class="button task-button" href="../index.html">Домой</a>
+        <h1 class="taskTitle">Задание №1</h1>
+    </div>
+    <div class="task-two">
+        <div class="random-div">
+            <h2 class="title">Random number:</h2>
+            <h1 class="number" id="random-number"></h1>
+        </div>
+        <button class="button" onclick="generateRandomNumber()">Generate Random Number</button>
+    </div>
+    <script>
+        const generateRandomNumber = () => {
+            const random = Math.floor(Math.random() * 101);
+            const randomNumber = document.getElementById("random-number");
+            randomNumber.innerHTML = `${random}`;
+        };
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <title>Task #3</title>
+    <style>
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+    
+        li,
+        p,
+        h3 {
+            margin: 0;
+            padding: 0;
+        }
+    
+        p {
+            margin-bottom: 20px;
+            padding: 0 40px 0 40px;
+        }
+    
+        .tab {
+            background-color: #597ba0;
+        }
+    
+        .tab li {
+            border: none;
+            outline: none;
+            cursor: pointer;
+            transition: 0.3s;
+            min-width: 80px;
+            text-align: center;
+    
+        }
+    
+        .tab li.active {
+            background-color: #4873a0;
+        }
+    
+        .tabcontent {
+            display: none;
+            border-top: none;
+            background-color: #fbf2eb;
+        }
+    
+        .main {
+            display: flex;
+        }
+    
+        .list {
+            display: flex;
+        }
+    
+        .listBtn {
+            display: flex;
+            min-height: 420px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    
+        .tablinks {
+            padding: 30px 0;
+            color: #ffffff;
+            user-select: none;
+        }
+    
+        .main {
+            margin: 60px 20px;
+        }
+        .titles{
+            margin: 20px 30px;
+            font-size: 26px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a class="button homeBtn" href="../index.html">Домой</a>
+    </div>
+<div class="main">
+        <ul class="tab listBtn">
+            <li class="tablinks" onclick="openTab(event, 'tab1')">HTML</li>
+            <li class="tablinks" onclick="openTab(event, 'tab2')">CSS</li>
+            <li class="tablinks" onclick="openTab(event, 'tab3')">JS</li>
+        </ul>
+        <ul class="list">
+            <li id="tab1" class="tabcontent">
+                <h3 class="titles">HTML</h3>
+                <p>HTML (HyperText Markup Language) is a markup language used to create and structure content for the web. It is the
+                foundation of web development and is used to create the structure and content of web pages. HTML is made up of a series
+                of tags that are used to define the different elements of a web page, such as headings, paragraphs, images, and links.</p>
+            
+                <p>HTML documents are made up of a series of elements, which are enclosed in angle brackets. Elements can be nested within
+                each other and can contain content such as text and other elements. HTML documents also use attributes to provide
+                additional information about elements, such as the source URL of an image or the target URL of a link.</p>
+                
+                <p>Web browsers use HTML to render web pages and display them to users. The latest version of HTML is HTML5, which
+                introduced many new features and improvements over previous versions.</p>
+                
+                <p>HTML is often used in combination with other web development technologies such as CSS (Cascading Style Sheets) and
+                JavaScript to create rich, interactive web experiences.</p>
+            </li>
+        
+            <li id="tab2" class="tabcontent">
+                <h3 class="titles">CSS</h3>
+                <p>CSS (Cascading Style Sheets) is a stylesheet language used to describe the presentation of a document written in HTML or
+                XML. It is used to add style, layout, and formatting to web pages, and is an essential component of modern web
+                development.</p>
+                
+                <p>CSS allows developers to separate the presentation of a document from its structure and content, which provides greater
+                flexibility and control over the appearance of a web page. CSS is used to define styles for elements such as text,
+                images, and other HTML elements, and can be used to add effects such as animation and transitions.</p>
+                
+                <p>CSS uses a series of rules, which consist of a selector and a declaration block. The selector specifies the element or
+                elements to which the style rules should be applied, while the declaration block contains one or more declarations that
+                specify the style rules themselves.</p>
+                
+                <p>CSS also includes a variety of selectors and properties that allow developers to target specific elements or groups of
+                elements, and to apply different styles to different parts of a web page. CSS can be used in conjunction with other web
+                development technologies such as HTML and JavaScript to create rich, interactive web experiences.</p>
+                
+                <p>Overall, CSS is a powerful and flexible stylesheet language that is essential for modern web development, and is used by
+                web developers all over the world to create beautiful, engaging, and responsive web pages</p>
+            </li>
+        
+            <li id="tab3" class="tabcontent">
+                <h3 class="titles">JS</h3>
+                <p>JavaScript is a programming language that is used to create dynamic and interactive web pages. It was first developed in
+                1995 by Brendan Eich while he was working at Netscape Communications. JavaScript is an object-oriented language that is
+                based on a prototype model, which means that objects inherit properties and methods from other objects.</p>
+                
+                <p>JavaScript can be used to create a wide range of applications, including web-based games, web applications, and mobile
+                apps. It is often used in combination with other web development technologies such as HTML and CSS to create rich,
+                interactive web experiences.</p>
+                
+                <p>JavaScript is executed on the client-side, which means that it is run by the user's web browser rather than a server.
+                This allows for fast and responsive web applications, as the user does not have to wait for a server to respond to their
+                requests.</p>
+                
+                <p>JavaScript is continually evolving, with new features and improvements being added on a regular basis. The latest
+                version of JavaScript is ECMAScript 2022, which includes many new features and improvements over previous versions.</p>
+                
+                <p>Overall, JavaScript is a versatile and powerful programming language that is essential for modern web development.</p>
+            </li>
+        </ul>
+</div>
+    <script>
+    function openTab(evt, tabName) {
+        const tabcontent = document.querySelectorAll(".tabcontent");
+        const tablinks = document.querySelectorAll(".tablinks");
+
+        if (evt.currentTarget.classList.contains("active")) {
+            document.getElementById(tabName).style.display = "none";
+            evt.currentTarget.classList.remove("active");
+        } else {
+            tabcontent.forEach((content, index) => {
+                content.style.display = "none";
+                tablinks[index].classList.remove("active");
+            });
+
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.classList.add("active");
+        };
+    };
+    </script>
+</body>
+</html>
